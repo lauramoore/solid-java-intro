@@ -7,7 +7,7 @@ package com.daugherty.bootcamp;
  * Java Main Class for launching the Feed Statistics Application
  *
  */
-public class FeedStatisticsApplication {
+public class StatisticsApplication {
 
 	/**
 	 * If you've done any java, you will recognize the main method. This is the
@@ -17,7 +17,7 @@ public class FeedStatisticsApplication {
 	 *            String value application arguments
 	 */
 	public static void main(String[] args) {
-		System.out.println("Running FeedStatisticsApplication");
+		System.out.println("Running StatisticsApplication");
 
 	}
 
