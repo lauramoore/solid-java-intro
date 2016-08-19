@@ -5,8 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import PredictionMatcher.PredicitonMatcher;
-
 /**
  * This is a Junit Test Case. You can run the checks with either the IDE or
  * Maven

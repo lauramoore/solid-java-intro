@@ -1,4 +1,4 @@
-package PredictionMatcher;
+package com.daugherty.bootcamp;
 
 public class PredicitonMatcher {
 
