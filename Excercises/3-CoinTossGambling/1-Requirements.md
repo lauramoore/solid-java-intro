@@ -18,5 +18,5 @@ Outcome:
 ```
 Player Wins!
 
-To get you started I've setup the Main method to take input as well as a failing Junit Test.
+Checkout branch cointossgamble.  I've started you off with a way to take input from command line, and a Junit Test for prediction to result pattern matching.
 
