@@ -1,0 +1,20 @@
+At the start I asked you to apply the Single Responsibility principle to your solution,
+let's test your learning.  How much code will you need to change in order to:
+
+1. Add to the output percent H/T in the final result
+```
+H: %d T: %d = f%
+```
+Where f% is a floating point decimal to 2 digits precision.  For exampl
+H: 1 T: 0 = 1.00
+H: 3 T: 7 = .30
+H: 1 T: 2 = .33
+
+2. Optionally print the cumulative results of each flip.
+* Take in a second argument on command line to print cumulative or totals
+* If cumulative then output format for each flip.  For example 3 flips could show
+```
+H: 1 T: 0 = 1.0
+H: 2 T: 0 = 1.0
+H: 2 T: 1 = .66
+```
