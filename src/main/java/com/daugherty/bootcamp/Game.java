@@ -1,11 +1,35 @@
 package com.daugherty.bootcamp;
 
 import java.security.SecureRandom;
+import java.util.Random;
 
 public class Game {
 	public static final int DOLLAR_COST_PER_TOSS = -1;
 	public static final int WINNINGS_ON_MATCH = 100;
-	private SecureRandom random = new SecureRandom();
+	private Random filpGenerator;
+	
+	/**
+	 * Declaring the default constructor and setting SecureRandom
+	 */
+	public Game() {
+		filpGenerator = new SecureRandom();
+	}
+	
+	/**
+	 * Adding a second constructor that allows injection of
+	 * the Random Dependency.
+	 */
+	
+	public Game(Random randomProvider) {
+		this.filpGenerator = randomProvider;
+	}
+	
+	/**
+	 * Run a specific Betting scenario
+	 * @param prediction
+	 * @param runs
+	 * @return
+	 */
 
 	public Bet resolve(String prediction, int runs) {
 
@@ -29,7 +53,7 @@ public class Game {
 
 	private String generateRun() {
 		String result = "";
-		int flip = random.nextInt(2);
+		int flip = filpGenerator.nextInt(2);
 		for (int i = 0; i < 5; i++) {
 			result += (flip == 0) ? "H" : "T";
 		}
