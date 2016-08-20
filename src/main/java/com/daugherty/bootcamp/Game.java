@@ -36,7 +36,7 @@ public class Game {
 		for (int i = 0; i < runs; i++) {
 			String result = generateRun();
 			if (PredicitonMatcher.matches(result, prediction)) {
-				return new Bet(winnings(i), Bet.WIN);
+				return new Bet(winnings(i + 1), Bet.WIN);
 			}
 		}
 		return new Bet(losses(runs), Bet.LOSS);
