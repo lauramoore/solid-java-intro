@@ -1,10 +1,11 @@
 package com.daugherty.bootcamp;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import java.util.Random;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -20,9 +21,15 @@ public class BetTest {
 	int runs = 5;
 	
 
-    Random mockRandom = Mockito.mock(Random.class);
+    Random mockRandom;
 	
-	Game game = new Game(mockRandom);
+	Game game;
+	
+	@Before
+	public void setup() {
+		mockRandom = Mockito.mock(Random.class);
+		game = new Game(mockRandom);
+	}
 
 	@Test
 	public void testLosingGame() {
@@ -48,10 +55,25 @@ public class BetTest {
 
 	}
 
+	/**
+	 * An extreme example showing that you can manage
+	 * sequential calls to the stub and deterministically
+	 * set a whole scenario
+	 */
 	@Test
 	public void testWinningLastToss() {
+		/**
+		 * Doing 5 whole runs is probably overkill, but brings home the point
+		 * that you can script a long running scenario if you do need to.
+		 * 
+		 * In this case we actually did uncover a pretty serious bug too!
+		 */
+		when(mockRandom.nextInt(2)).
+		 thenReturn(0,1,1,1,1,0,0,1,1,1,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0);
+
 		String prediction = "HHHHH";
 		Bet end = game.resolve(prediction, runs);
+		
 		assertEquals("Should have won", Bet.WIN, end.getStatus());
 		assertEquals("Should have cost $5", 95, end.getWinnings(), 0);
 

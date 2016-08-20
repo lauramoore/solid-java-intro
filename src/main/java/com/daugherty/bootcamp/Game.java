@@ -53,8 +53,8 @@ public class Game {
 
 	private String generateRun() {
 		String result = "";
-		int flip = filpGenerator.nextInt(2);
 		for (int i = 0; i < 5; i++) {
+			int flip = filpGenerator.nextInt(2);
 			result += (flip == 0) ? "H" : "T";
 		}
 		return result;
