@@ -22,8 +22,8 @@ public class BetTest {
 	public void testWinningFirstToss() {
 		String prediction = "HHHHH";
 		Bet end = game.resolve(prediction, runs);
-		assertEquals(Bet.WIN, end.getStatus());
-		assertEquals(99, end.getWinnings(), 0);
+		assertEquals("Should have won", Bet.WIN, end.getStatus());
+		assertEquals("Should have cost $1", 99, end.getWinnings(), 0);
 
 	}
 
@@ -31,8 +31,8 @@ public class BetTest {
 	public void testWinningLastToss() {
 		String prediction = "HHHHH";
 		Bet end = game.resolve(prediction, runs);
-		assertEquals(Bet.WIN, end.getStatus());
-		assertEquals(95, end.getWinnings(), 0);
+		assertEquals("Should have won", Bet.WIN, end.getStatus());
+		assertEquals("Should have cost $5", 95, end.getWinnings(), 0);
 
 	}
 
